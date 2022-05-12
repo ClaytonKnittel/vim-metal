@@ -172,30 +172,30 @@ syn keyword rayTracingBuiltinFns get_committed_ray_direction
 
 syn keyword miscBuiltinFns is_function_constant_defined
 
-hi def link mathBuitinCnsts builtinCnsts
-hi def link synchronizationBuiltinCnsts builtinCnsts
-hi def link atomicMemoryOrder builtinCnsts
+hi def link mathBuitinCnsts metalBuiltinCnsts
+hi def link synchronizationBuiltinCnsts metalBuiltinCnsts
+hi def link atomicMemoryOrder metalBuiltinCnsts
 
-hi def link commonBuiltinFns builtinFns
-hi def link integerBuiltinFns builtinFns
-hi def link relationalBuiltinFns builtinFns
-hi def link mathBuiltinFns builtinFns
-hi def link matrixBuiltinFns builtinFns
-hi def link SIMDGroupBuiltinFns builtinFns
-hi def link SIMDGroupMatrixBuiltinFns builtinFns
-hi def link geometryBuiltinFns builtinFns
-hi def link synchronizationBuiltinFns builtinFns
-hi def link SIMDBuiltinFns builtinFns
-hi def link quadGroupBuiltinFns builtinFns
-hi def link fragmentBuiltinFns builtinFns
-hi def link pullModelBuiltinFns builtinFns
-hi def link textureBuiltinFns builtinFns
-hi def link unpackBuiltinFns builtinFns
-hi def link packBuiltinFns builtinFns
-hi def link atomicBuiltinFns builtinFns
-hi def link renderBuiltinFns builtinFns
-hi def link rayTracingBuiltinFns builtinFns
-hi def link miscBuiltinFns builtinFns
+hi def link commonBuiltinFns metalBuiltinFns
+hi def link integerBuiltinFns metalBuiltinFns
+hi def link relationalBuiltinFns metalBuiltinFns
+hi def link mathBuiltinFns metalBuiltinFns
+hi def link matrixBuiltinFns metalBuiltinFns
+hi def link SIMDGroupBuiltinFns metalBuiltinFns
+hi def link SIMDGroupMatrixBuiltinFns metalBuiltinFns
+hi def link geometryBuiltinFns metalBuiltinFns
+hi def link synchronizationBuiltinFns metalBuiltinFns
+hi def link SIMDBuiltinFns metalBuiltinFns
+hi def link quadGroupBuiltinFns metalBuiltinFns
+hi def link fragmentBuiltinFns metalBuiltinFns
+hi def link pullModelBuiltinFns metalBuiltinFns
+hi def link textureBuiltinFns metalBuiltinFns
+hi def link unpackBuiltinFns metalBuiltinFns
+hi def link packBuiltinFns metalBuiltinFns
+hi def link atomicBuiltinFns metalBuiltinFns
+hi def link renderBuiltinFns metalBuiltinFns
+hi def link rayTracingBuiltinFns metalBuiltinFns
+hi def link miscBuiltinFns metalBuiltinFns
 
 "metal half precision floating-point literal value
 syn match metalFloat "\d\+[Hh]"
@@ -295,8 +295,8 @@ hi def link filterTypes metalTypes
 hi def link mipfilterTypes metalTypes
 hi def link metalTypes Type
 hi def link basicMetalKeywords Constant
-hi def link builtinCnsts Constant
-hi def link builtinFns Function
+hi def link metalBuiltinCnsts Constant
+hi def link metalBuiltinFns Function
 hi def link scalarMetalTypes Type
 
 let b:current_syntax = "metal"
