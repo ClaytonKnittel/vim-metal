@@ -14,7 +14,6 @@ unlet b:current_syntax
 
 syn keyword basicMetalKeywords vertex fragment constant buffer device threadgroup threadgroup_imageblock patch
 syn keyword scalarMetalTypes ptrdiff_t half uchar uint
-syn match specialMetalAttributes "\[\[(amplification_count|amplification_id|base_instance|base_vertex|instance_id|vertex_id)\]\]"
 
 "metal half precision floating-point literal value
 syn match metalFloat "\d\+[Hh]"
@@ -24,6 +23,7 @@ syn match metalFloat "\d\+\.\d*[Hh]"
 syn match metalFloat "\d\+[Uu]"
 
 syn match attributes "\[\[.*\]\]"
+syn match specialMetalAttributes "\[\[(amplification_count|amplification_id|base_instance|base_vertex|instance_id|vertex_id)\]\]"
 syn match metalTypes "\<\(bool\|char\|uchar\|short\|ushort\|half\|int\|uint\|float\)[2-4]"
 syn match packedMetalTypes "packed_\(char\|uchar\|short\|ushort\|half\|int\|uint\|float\)[2-4]"
 syn match atomicType "atomic_\(int\|uint\|bool\)"
