@@ -15,7 +15,187 @@ unlet b:current_syntax
 syn keyword basicMetalKeywords vertex fragment constant buffer device threadgroup threadgroup_imageblock patch
 syn keyword scalarMetalTypes ptrdiff_t half uchar uint
 
-syn keyword builtinFns is_function_constant_defined
+syn keyword commonBuiltinFns clamp mix saturate sign smoothstep step
+
+syn keyword integerBuiltinFns abs absdiff addsat clamp clz ctz extract_bits hadd
+syn keyword integerBuiltinFns insert_bits mad24 madhi madsat max max3 median3
+syn keyword integerBuiltinFns min min3 mul24 mulhi popcount reverse_bits rhadd
+syn keyword integerBuiltinFns rotate subsat
+
+syn keyword relationalBuiltinFns all any isfinite isinf isnan isnormal isordered
+syn keyword relationalBuiltinFns isunordered not select signbit
+
+syn keyword mathBuiltinFns acos acosh asin asinh atan atan2 atanh ceil copysign
+syn keyword mathBultinFns cos cosh cospi divide exp exp2 exp10 fabs abs fdim
+syn keyword mathBultinFns floor fma fmax max fmax3 max3 fmedian3 median3 fmin
+syn keyword mathBultinFns min fmin3 min3 fmod fract frexp ilogb ldexp log log2
+syn keyword mathBultinFns log10 modf pow powr rint round rsqrt sin sincos sinh
+syn keyword mathBultinFns sinpi sqrt tan tanh tanpi trunc
+
+syn keyword mathBuitinCnsts MAXFLOAT HUGE_VALF INFINITY NAN M_E_F M_LOG2E_F
+syn keyword mathBultinCnsts M_LOG10E_F M_LN2_F M_LN10_F M_PI_F M_PI_2_F M_PI_4_F
+syn keyword mathBultinCnsts M_1_PI_F M_2_PI_F M_2_SQRTPI_F M_SQRT2_F M_SQRT1_2_F
+syn keyword mathBuitinCnsts MAXHALF HUGE_VALH M_E_H M_LOG2E_H M_LOG10E_H M_LN2_H
+syn keyword mathBultinCnsts M_LN10_H M_PI_H M_PI_2_H M_PI_4_H M_1_PI_H M_2_PI_H
+syn keyword mathBultinCnsts M_2_SQRTPI_H M_SQRT2_H M_SQRT1_2_H
+
+syn keyword matrixBuiltinFns determinant transpose
+
+syn keyword SIMDGroupBuiltinFns simdgroup_matrix make_filled_simdgroup_matrix
+syn keyword SIMDGroupBuiltinFns simdgroup_load simdgroup_store
+
+syn keyword SIMDGroupMatrixBuiltinFns simdgroup_multiply_accumulate simdgroup_multiply
+
+syn keyword geometryBuiltinFns cross distance distance_squared dot faceforward
+syn keyword geometryBuiltinFns length length_squared normalize reflect refract
+
+syn keyword synchronizationBuiltinFns threadgroup_barrier simdgroup_barrier
+
+syn keyword synchronizationBuiltinCnsts mem_none mem_device mem_threadgroup
+syn keyword synchronizationBuiltinCnsts mem_texture mem_threadgroup_imageblock
+
+syn keyword SIMDBuiltinFns simd_active_threads_mask simd_all simd_and simd_any
+syn keyword SIMDBuiltinFns simd_ballot simd_broadcast simd_broadcast_first
+syn keyword SIMDBuiltinFns simd_is_first simd_shuffle simd_shuffle_and_fill_down
+syn keyword SIMDBuiltinFns simd_shuffle_and_fill_up simd_shuffle_down
+syn keyword SIMDBuiltinFns simd_shuffle_rotate_down simd_shuffle_rotate_up
+syn keyword SIMDBuiltinFns simd_shuffle_up simd_shuffle_xor
+syn keyword SIMDBuiltinFns simd_is_helper_thread simd_max simd_min simd_or
+syn keyword SIMDBuiltinFns simd_prefix_exclusive_product
+syn keyword SIMDBuiltinFns simd_prefix_exclusive_sum
+syn keyword SIMDBuiltinFns simd_prefix_inclusive_product
+syn keyword SIMDBuiltinFns simd_prefix_inclusive_sum simd_product simd_sum
+syn keyword SIMDBuiltinFns simd_xor
+
+syn keyword quadGroupBuiltinFns quad_ballot quad_broadcast quad_broadcast_first
+syn keyword quadGroupBuiltinFns quad_shuffle quad_shuffle_and_fill_down
+syn keyword quadGroupBuiltinFns quad_shuffle_and_fill_up quad_shuffle_down
+syn keyword quadGroupBuiltinFns quad_shuffle_rotate_down quad_shuffle_rotate_up
+syn keyword quadGroupBuiltinFns quad_shuffle_up quad_shuffle_xor
+syn keyword quadGroupBuiltinFns quad_active_threads_mask quad_all quad_and
+syn keyword quadGroupBuiltinFns quad_any quad_is_first quad_is_helper_thread
+syn keyword quadGroupBuiltinFns quad_max quad_min quad_or
+syn keyword quadGroupBuiltinFns quad_prefix_exclusive_product
+syn keyword quadGroupBuiltinFns quad_prefix_exclusive_sum
+syn keyword quadGroupBuiltinFns quad_prefix_inclusive_product
+syn keyword quadGroupBuiltinFns quad_prefix_inclusive_sum quad_product quad_sum
+syn keyword quadGroupBuiltinFns quad_xor
+
+syn keyword fragmentBuiltinFns dfdx dfdy fwidth get_num_samples
+syn keyword fragmentBuiltinFns get_sample_position discard_fragment
+
+syn keyword pullModelBuiltinFns interpolate_at_center interpolate_at_centroid
+syn keyword pullModelBuiltinFns interpolate_at_offset interpolate_at_sample
+
+syn keyword textureBuiltinFns sample sample_compare gather gather_compare read write
+syn keyword textureBuiltinFns get_width get_height get_depth get_num_mip_levels
+syn keyword textureBuiltinFns get_array_size get_num_samples get_num_colors
+syn keyword textureBuiltinFns get_color_coverage_mask
+syn keyword textureBuiltinFns sparse_sample sparse_sample_compare sparse_gather
+syn keyword textureBuiltinFns sparse_gather_compare sparse_read data
+syn keyword textureBuiltinFns calculate_unclamped_lod calculate_clamped_lod
+syn keyword textureBuiltinFns fence is_null_texture
+syn keyword textureBuiltinFns bias level gradient gradient2d gradient3d gradientcube
+syn keyword textureBuiltinFns min_lod_clamp
+
+syn keyword unpackBuiltinFns unpack_unorm4x8_to_float unpack_snorm4x8_to_float
+syn keyword unpackBuiltinFns unpack_unorm4x8_to_half unpack_snorm4x8_to_half
+syn keyword unpackBuiltinFns unpack_unorm4x8_srgb_to_float
+syn keyword unpackBuiltinFns unpack_unorm4x8_srgb_to_half
+syn keyword unpackBuiltinFns unpack_unorm2x16_to_float unpack_snorm2x16_to_float
+syn keyword unpackBuiltinFns unpack_unorm2x16_to_half unpack_snorm2x16_to_half
+syn keyword unpackBuiltinFns unpack_unorm10a2_to_float unpack_unorm565_to_float
+syn keyword unpackBuiltinFns unpack_unorm10a2_to_half unpack_unorm565_to_half
+
+syn keyword packBuiltinFns pack_float_to_unorm4x8 pack_float_to_snorm4x8
+syn keyword packBuiltinFns pack_half_to_unorm4x8 pack_half_to_snorm4x8
+syn keyword packBuiltinFns pack_float_to_srgb_unorm4x8
+syn keyword packBuiltinFns pack_half_to_srgb_unorm4x8 pack_float_to_unorm2x16
+syn keyword packBuiltinFns pack_float_to_snorm2x16 pack_half_to_unorm2x16
+syn keyword packBuiltinFns pack_half_to_snorm2x16 pack_float_to_unorm10a2
+syn keyword packBuiltinFns pack_float_to_unorm565 pack_half_to_unorm10a2
+syn keyword packBuiltinFns pack_half_to_unorm565
+
+syn keyword atomicMemoryOrder memory_order_relaxed
+
+syn keyword atomicBuiltinFns atomic_store_explicit atomic_load_explicit
+syn keyword atomicBuiltinFns atomic_exchange_explicit
+syn keyword atomicBuiltinFns atomic_compare_exchange_weak_explicit
+syn keyword atomicBuiltinFns atomic_fetch_add_explicit atomic_fetch_and_explicit
+syn keyword atomicBuiltinFns atomic_fetch_max_explicit atomic_fetch_min_explicit
+syn keyword atomicBuiltinFns atomic_fetch_or_explicit atomic_fetch_sub_explicit
+syn keyword atomicBuiltinFns atomic_fetch_xor_explicit
+
+syn keyword renderBuiltinFns draw_primitives draw_indexed_primitives
+syn keyword renderBuiltinFns draw_patches draw_indexed_patches
+
+syn keyword rayTracingBuiltinFns is_null_primitive_acceleration_structure
+syn keyword rayTracingBuiltinFns is_null_instance_acceleration_structure
+syn keyword rayTracingBuiltinFns is_null_acceleration_structure intersect
+syn keyword rayTracingBuiltinFns set_triangle_front_facing_winding
+syn keyword rayTracingBuiltinFns set_geometry_cull_mode set_opacity_cull_mode
+syn keyword rayTracingBuiltinFns force_opacity assume_geometry_type
+syn keyword rayTracingBuiltinFns assume_identity_transforms
+syn keyword rayTracingBuiltinFns accept_any_intersection
+syn keyword rayTracingBuiltinFns reset next abort
+syn keyword rayTracingBuiltinFns get_candidate_intersection_type
+syn keyword rayTracingBuiltinFns get_committed_intersection_type
+syn keyword rayTracingBuiltinFns commit_triangle_intersection
+syn keyword rayTracingBuiltinFns commit_bounding_box_intersection
+syn keyword rayTracingBuiltinFns get_world_space_ray_origin
+syn keyword rayTracingBuiltinFns get_world_space_ray_direction
+syn keyword rayTracingBuiltinFns get_ray_min_distance
+syn keyword rayTracingBuiltinFns get_intersection_params
+syn keyword rayTracingBuiltinFns get_candidate_triangle_distance
+syn keyword rayTracingBuiltinFns get_candidate_instance_id
+syn keyword rayTracingBuiltinFns get_candidate_user_instance_id
+syn keyword rayTracingBuiltinFns get_candidate_geometry_id
+syn keyword rayTracingBuiltinFns get_candidate_primitive_id
+syn keyword rayTracingBuiltinFns get_candidate_triangle_barycentric_coord
+syn keyword rayTracingBuiltinFns is_candidate_non_opaque_bounding_box
+syn keyword rayTracingBuiltinFns is_candidate_triangle_front_facing
+syn keyword rayTracingBuiltinFns get_candidate_object_to_world_transform
+syn keyword rayTracingBuiltinFns get_candidate_world_to_object_transform
+syn keyword rayTracingBuiltinFns get_candidate_ray_origin
+syn keyword rayTracingBuiltinFns get_candidate_ray_direction
+syn keyword rayTracingBuiltinFns get_committed_distance
+syn keyword rayTracingBuiltinFns get_committed_instance_id
+syn keyword rayTracingBuiltinFns get_committed_user_instance_id
+syn keyword rayTracingBuiltinFns get_committed_geometry_id
+syn keyword rayTracingBuiltinFns get_committed_primitive_id
+syn keyword rayTracingBuiltinFns get_committed_triangle_barycentric_coord
+syn keyword rayTracingBuiltinFns is_committed_triangle_front_facing
+syn keyword rayTracingBuiltinFns get_committed_object_to_world_transform
+syn keyword rayTracingBuiltinFns get_committed_world_to_object_transform
+syn keyword rayTracingBuiltinFns get_committed_ray_origin
+syn keyword rayTracingBuiltinFns get_committed_ray_direction
+
+syn keyword miscBuiltinFns is_function_constant_defined
+
+hi def link mathBuitinCnsts builtinCnsts
+hi def link synchronizationBuiltinCnsts builtinCnsts
+hi def link atomicMemoryOrder builtinCnsts
+
+hi def link commonBuiltinFns builtinFns
+hi def link integerBuiltinFns builtinFns
+hi def link relationalBuiltinFns builtinFns
+hi def link mathBuiltinFns builtinFns
+hi def link matrixBuiltinFns builtinFns
+hi def link SIMDGroupBuiltinFns builtinFns
+hi def link SIMDGroupMatrixBuiltinFns builtinFns
+hi def link geometryBuiltinFns builtinFns
+hi def link synchronizationBuiltinFns builtinFns
+hi def link SIMDBuiltinFns builtinFns
+hi def link quadGroupBuiltinFns builtinFns
+hi def link fragmentBuiltinFns builtinFns
+hi def link pullModelBuiltinFns builtinFns
+hi def link textureBuiltinFns builtinFns
+hi def link unpackBuiltinFns builtinFns
+hi def link packBuiltinFns builtinFns
+hi def link atomicBuiltinFns builtinFns
+hi def link renderBuiltinFns builtinFns
+hi def link rayTracingBuiltinFns builtinFns
+hi def link miscBuiltinFns builtinFns
 
 "metal half precision floating-point literal value
 syn match metalFloat "\d\+[Hh]"
@@ -115,6 +295,8 @@ hi def link filterTypes metalTypes
 hi def link mipfilterTypes metalTypes
 hi def link metalTypes Type
 hi def link basicMetalKeywords Constant
+hi def link builtinCnsts Constant
+hi def link builtinFns Function
 hi def link scalarMetalTypes Type
 
 let b:current_syntax = "metal"
