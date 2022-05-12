@@ -12,7 +12,7 @@ end
 runtime! syntax/cpp.vim
 unlet b:current_syntax
 
-syn keyword basicMetalKeywords vertex fragment constant buffer devicethreadgroup patch
+syn keyword basicMetalKeywords vertex fragment constant buffer device threadgroup threadgroup_imageblock patch
 syn keyword scalarMetalTypes ptrdiff_t half uchar uint
 
 "metal half precision floating-point literal value
