@@ -50,7 +50,7 @@ syn match userAttributes "\[\[\s*user(\([a-zA-Z_][a-zA-Z0-9_]*\))\s*\]\]"
 syn match aliasImplicitImageblockAttributes "\[\[\s*\(alias_implicit_imageblock\|alias_implicit_imageblock_color([0-9]+)\)\s*\]\]"
 syn match viewportSelectionAttributes "\[\[\s*\(viewport_array_index\)\s*\]\]"
 
-# got lazy on this one, just match it no matter what
+" got lazy on this one, just match it no matter what
 syn match functionConstantAttribute "\[\[\s*\(function_constant([0-9]+)\(,[^\]]+\)?\|\(,[^\]]+\),[\s]*function_constant([0-9]+)\)\s*\]\]"
 syn match rasterOrderGroupAttribute "\[\[\s*\(raster_order_group([0-9]+)\(,[^\]]+\)?\|\(,[^\]]+\),[\s]*raster_order_group([0-9]+)\)\s*\]\]"
 
