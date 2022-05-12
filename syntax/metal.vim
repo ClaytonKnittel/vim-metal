@@ -296,7 +296,7 @@ hi def link mipfilterTypes metalTypes
 hi def link metalTypes Type
 hi def link basicMetalKeywords Constant
 hi def link metalBuiltinCnsts Constant
-hi def link metalBuiltinFns Identifier
+" hi def link metalBuiltinFns Function
 hi def link scalarMetalTypes Type
 
 let b:current_syntax = "metal"
