@@ -44,6 +44,7 @@ syn match kernelTileInputAttributes "\[\[\s*\(render_target_array_index\)\s*\]\]
 syn match kernelInputAttributes "\[\[\s*\(dispatch_quadgroups_per_threadgroup\|dispatch_simdgroups_per_threadgroup\|dispatch_threads_per_threadgroup\|grid_origin\|grid_size\|quadgroup_index_in_threadgroup\|quadgroups_per_threadgroup\|simdgroup_index_in_threadgroup\|simdgroups_per_threadgroup\|thread_execution_width\|thread_index_in_quadgroup\|thread_index_in_simdgroup\|thread_index_in_threadgroup\|thread_position_in_grid\|thread_position_in_threadgroup\|threadgroup_position_in_grid\|threadgroups_per_grid\|threads_per_grid\|threads_per_simdgroup\|threads_per_threadgroup\)\s*\]\]"
 syn match intersectionOutputAttributes "\[\[\s*\(accept_intersection\|continue_search\|distance\)\s*\]\]"
 syn match inputAssemblyAttributes "\[\[\s*\(stage_in\)\s*\]\]"
+syn match argumentBufferAttributes "\[\[\s*\(id([0-9]\+)\)\s*\]\]"
 syn match samplingAndInterpolationAttributes "\[\[\s*\(center_perspective\|center_no_perspective\|centroid_perspective\|centroid_no_perspective\|sample_perspective\|sample_no_perspective\|flat\)\s*\]\]"
 syn match imageBlockAttributes "\[\[\s*imageblock_data(\([a-zA-Z_][a-zA-Z0-9_]*\))\s*\]\]"
 syn match userAttributes "\[\[\s*user(\([a-zA-Z_][a-zA-Z0-9_]*\))\s*\]\]"
@@ -71,6 +72,7 @@ hi def link kernelTileInputAttributes attributes
 hi def link intersectionInputAttributes attributes
 hi def link intersectionOutputAttributes attributes
 hi def link inputAssemblyAttributes attributes
+hi def link argumentBufferAttributes attributes
 hi def link samplingAndInterpolationAttributes attributes
 hi def link imageBlockAttributes attributes
 hi def link userAttributes attributes
