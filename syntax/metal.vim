@@ -14,6 +14,8 @@ unlet b:current_syntax
 
 syn keyword basicMetalKeywords vertex fragment constant buffer device threadgroup threadgroup_imageblock patch
 syn keyword scalarMetalTypes ptrdiff_t half uchar uint
+syn keyword specialMetalAttributes [[amplification_count]] [[amplification_id]] [[base_instance]]
+syn keyword specialMetalAttributes [[base_vertex]] [[instance_id]] [[vertex_id]]
 
 "metal half precision floating-point literal value
 syn match metalFloat "\d\+[Hh]"
@@ -57,5 +59,6 @@ hi def link mipfilterTypes metalTypes
 hi def link metalTypes Type
 hi def link basicMetalKeywords Constant
 hi def link scalarMetalTypes Type
+hi def link specialMetalAttributes Special
 
 let b:current_syntax = "metal"
