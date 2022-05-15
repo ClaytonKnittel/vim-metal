@@ -261,7 +261,7 @@ hi def link viewportSelectionAttributes attributes
 hi def link functionConstantAttribute attributes
 hi def link rasterOrderGroupAttribute attributes
 
-syn match metalTypes "\<\(bool\|char\|uchar\|short\|ushort\|half\|int\|uint\|float\)[2-4]"
+syn match metalBuiltinTypes "\<\(bool\|char\|uchar\|short\|ushort\|half\|int\|uint\|float\)[2-4]"
 syn match packedMetalTypes "packed_\(char\|uchar\|short\|ushort\|half\|int\|uint\|float\)[2-4]"
 syn match atomicType "atomic_\(int\|uint\|bool\)"
 syn match atomicTemplate "atomic<\(int\|uint\|bool\)>"
@@ -285,7 +285,10 @@ syn match mipfilterTypes "mip_\?filter::\(nearest\|linear\|none\)"
 hi def link metalFloat Number
 hi def link attributes metalTypes
 hi def link specialMetalAttributes metalTypes
+hi def link metalBuiltinTypes metalTypes
 hi def link packedMetalTypes metalTypes
+hi def link atomicType metalTypes
+hi def link atomicTemplate metalTypes
 hi def link matrixMetalTypes metalTypes
 hi def link pixelTypes metalTypes
 hi def link accessTypes metalTypes
