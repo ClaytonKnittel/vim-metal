@@ -261,7 +261,7 @@ hi def link viewportSelectionAttributes attributes
 hi def link functionConstantAttribute attributes
 hi def link rasterOrderGroupAttribute attributes
 
-syn match metalBuiltinTypes "\<\(bool\|char\|uchar\|short\|ushort\|half\|int\|uint\|float\)[2-4]"
+syn match metalBuiltinTypes "\(bool\|char\|uchar\|short\|ushort\|half\|int\|uint\|float\)[2-4]?"
 syn match packedMetalTypes "packed_\(char\|uchar\|short\|ushort\|half\|int\|uint\|float\)[2-4]"
 syn match atomicType "atomic_\(int\|uint\|bool\)"
 syn match atomicTemplate "atomic<\(int\|uint\|bool\)>"
