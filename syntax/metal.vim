@@ -206,10 +206,10 @@ syn match metalFloat "\d\+[Uu]"
 
 syn match functionAttributes "\[\[\s*\(vertex\|fragment\|kernel\|visible\|stitchable\|intersection(\(triangle\|bounding_box\)\(,[\s]*\(triangle\|triangle_data\|instancing\|world_space_data\|primitive_motion\|instance_motion\)\)*)\)\s*\]\]"
 
-syn match patchAttributes "\[\[\s*\(patch\|patch(\(quad\|triangle\)\(,[\s]*\([0-9]\|[1-2][0-9]\|3[0-2]\)\)?)\)\s*\]\]"
+syn match patchAttributes "\[\[\s*\(patch\|patch(\(quad\|triangle\)\(,[\s]*\([0-9]\|[1-2][0-9]\|3[0-2]\)\)\?)\)\s*\]\]"
 syn match fragmentFunctionAttributes "\[\[\s*\(early_fragment_tests\)\s*\]\]"
 syn match kernelFunctionAttributes "\[\[\s*\(max_total_threads_per_threadgroup([1-9][0-9]*)\)\s*\]\]"
-syn match hostNameAttribute "\[\[\s*\(host_name(\"\([^\"\\]*\(\\\"\)?\)\+\")\)\s*\]\]"
+syn match hostNameAttribute "\[\[\s*\(host_name(\"\([^\"\\]*\(\\\"\)\?\)\+\")\)\s*\]\]"
 
 syn match locationAttributes "\[\[\s*\(buffer([0-9]\+)\|texture([0-9]\+)\|sampler([0-9]\+)\|threadgroup([0-9]\+)\)\s*\]\]"
 
@@ -232,8 +232,8 @@ syn match aliasImplicitImageblockAttributes "\[\[\s*\(alias_implicit_imageblock\
 syn match viewportSelectionAttributes "\[\[\s*\(viewport_array_index\)\s*\]\]"
 
 " got lazy on this one, just match it no matter what
-syn match functionConstantAttribute "\[\[\s*\(function_constant([0-9]\+)\(,[^\]]\+\)?\|\(,[^\]]\+\),[\s]*function_constant([0-9]\+)\)\s*\]\]"
-syn match rasterOrderGroupAttribute "\[\[\s*\(raster_order_group([0-9]\+)\(,[^\]]\+\)?\|\(,[^\]]\+\),[\s]*raster_order_group([0-9]\+)\)\s*\]\]"
+syn match functionConstantAttribute "\[\[\s*\(function_constant([0-9]\+)\(,[^\]]\+\)\?\|\(,[^\]]\+\),[\s]*function_constant([0-9]\+)\)\s*\]\]"
+syn match rasterOrderGroupAttribute "\[\[\s*\(raster_order_group([0-9]\+)\(,[^\]]\+\)\?\|\(,[^\]]\+\),[\s]*raster_order_group([0-9]\+)\)\s*\]\]"
 
 hi def link functionAttributes attributes
 hi def link patchAttributes attributes
@@ -261,7 +261,7 @@ hi def link viewportSelectionAttributes attributes
 hi def link functionConstantAttribute attributes
 hi def link rasterOrderGroupAttribute attributes
 
-syn match metalBuiltinTypes "\(bool\|char\|uchar\|short\|ushort\|half\|int\|uint\|float\)\([2-4]\)?"
+syn match metalBuiltinTypes "\(bool\|char\|uchar\|short\|ushort\|half\|int\|uint\|float\)\([2-4]\)\?"
 syn match packedMetalTypes "packed_\(char\|uchar\|short\|ushort\|half\|int\|uint\|float\)[2-4]"
 syn match atomicType "atomic_\(int\|uint\|bool\)"
 syn match atomicTemplate "atomic<\(int\|uint\|bool\)>"
